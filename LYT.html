@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>密码验证</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { padding: 20px; font-family: Arial, sans-serif; }
+        #content { display: none; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div id="form">
+        <h3>请输入4位访问密码</h3>
+        <input type="number" id="password" placeholder="0000" maxlength="4" pattern="\d{4}">
+        <button onclick="checkPassword()">验证</button>
+        <p id="error" style="color:red;display:none;">密码错误，请重试</p>
+    </div>
+    
+    <div id="content">
+        <p>我们都各自走了很久的路才相遇</p>
+        <p>你明媚强烈的爱意</p>
+        <p>让对待感情敏感多疑的我</p>
+        <p>不用再反复确认</p>
+        <p>希望你永远相信自己</p>
+        <p>无人替代</p>
+        <p>希望我们彼此也是</p>
+    </div>
+
+    <script>
+        // 设置密码（可自行修改）
+        const correctPassword = "1234";
+        
+        function checkPassword() {
+            const input = document.getElementById('password').value;
+            const errorElement = document.getElementById('error');
+            
+            if(input === correctPassword) {
+                document.getElementById('form').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                errorElement.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
